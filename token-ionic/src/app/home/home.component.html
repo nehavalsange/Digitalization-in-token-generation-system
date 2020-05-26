@@ -1,0 +1,98 @@
+<ion-header>
+  <mat-toolbar color="primary" class="navbar">
+      <div>Setu Suvidha Kendra </div>
+    <div>
+       
+        <div class="dropdown" style="float:right;" slot="secondary">
+            <button class="dropbtn">
+                <a href="#contact" style="float:right;" slot="secondary">Contact</a>
+              </button>
+        </div>
+        <div class="dropdown" style="float:right;" slot="secondary">
+          <button class="dropbtn">
+              <a href="#about" style="float:right;" slot="secondary">About</a>
+            </button>
+        </div>
+      
+        <div class="dropdown" style="float:right;" slot="secondary">
+        <!-- <span>Customer Service</span> -->
+          <button class="dropbtn">
+            <a href="#about" class="dropbtn" style="float:right;" slot="secondary">Customer Service</a>
+          </button>
+
+          <div class="dropdown-content">
+            <a href="#" routerLink="/User">SMS Service</a>
+            <a href="#" routerLink="/livestatus">Live Status</a>
+          </div>
+        </div>
+
+        <div class="dropdown" style="float:right;" slot="secondary">
+          <button class="dropbtn">
+          <!-- Login As -->
+          <!-- <i class="fa fa-caret-down"></i> -->
+            <a href="#about" class="dropbtn" style="float:right;" slot="secondary">Login As</a>
+          </button>
+          <div class="dropdown-content">
+            <a href="#" routerLink="/login">Token Generator</a>
+            <a href="#" routerLink="/login">Window Operator</a>
+            <a href="#" routerLink="/adminlogin">Admin</a>
+          </div>
+        </div>
+        <div class="dropdown" style="float:right;" slot="secondary">
+            <button class="dropbtn">
+              <a class="active" href="#home" style="float:right;" [routerLink]="['/home']" routerLinkActive="router-link-active" slot="secondary">Home</a>
+            </button>
+        </div>
+    </div>
+  </mat-toolbar>
+  
+
+</ion-header>
+<ion-content>
+  <ion-slides [options]="slideOptsOne" #slideWithNav>
+    <!--(ionSlideDidChange)="SlideDidChange(sliderOne,slideWithNav)">-->
+    <ion-slide *ngFor="let s of sliderOne.slidesItems">
+      <img src="http://localhost:8100/assets/images/image{{s.id}}.jpg">
+    </ion-slide>
+  </ion-slides>
+
+
+
+  
+  <ion-card>
+
+    <ion-card-content>
+      <ion-card-title>
+        The benefits of SETU to the government and its citizens
+      </ion-card-title>
+      <p>
+        Whenever a common person needs to retrieve or obtain a document or certificate from any division/department of the government
+        then he or she has to go through a lot of hassles. Waiting in the long queue and dealing with officials are the two
+        prime issues. But, with the inception of SETU, these issues can be removed, as the certificate or document can be
+        accessed easily with a few clicks of a mouse. On the other hand, it will help the government to speed up its work
+        process and bring in more transparency is its system. The process of obtaining any certificate or document through
+        the online system has been kept quite simple, and the aim of the government is to issue the document/certificate
+        within a time span of 15 days.
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+
+
+  <div class="footer">
+    <h1 align="center" style="color:white">SETU SUVIDHA KENDRA </h1>
+    <p align="center" style="color:white"> © 2020 . Setu Suvidha Kendra All Rights Reserved</p>
+
+  </div>
+
+
+</ion-content>

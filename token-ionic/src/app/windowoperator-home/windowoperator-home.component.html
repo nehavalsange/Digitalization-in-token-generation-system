@@ -1,0 +1,128 @@
+<ion-header>
+    <mat-toolbar color="primary" class="navbar">
+      <div>Setu Suvidha Kendra</div>
+      <div>
+          
+    <a class="active" href="#home" style="float:right;" [routerLink]="['/home']" >Logout</a>
+      </div>
+      </mat-toolbar>
+      
+    </ion-header>
+
+
+  
+<ion-content>
+<!-- 
+        <div class="container">
+  <ion-item>
+    <ion-label>Window Number</ion-label>
+    <ion-label >{{windownumber}}</ion-label>
+    
+    <ion-button (click)='presentPrompt()'>Choose window No</ion-button>
+  </ion-item>
+  <ion-item>
+    <ion-label>Current Token</ion-label>
+    <ion-label>{{currenttoken}}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-button (click)='nextToken()'>Next Token</ion-button>
+   
+  </ion-item>
+
+  
+</div> -->
+
+<!-- <div *ngFor="let ws of windowStatuses">
+    Window No. : {{ws.windowNo}}<br/>
+    Token : {{ws.currentToken}}
+  </div>
+
+  <table class='table table-responsive' border="1">
+    <tr>
+      <td>Window No</td>
+      <td>Token</td>
+    </tr>
+    <tr *ngFor="let ws of windowStatuses">
+      <td>{{ws.windowNo}}</td>
+      <td>{{ws.currentToken}}</td>
+    </tr>
+  </table> -->
+
+ 
+
+    <ion-grid>
+
+      
+      
+     
+      
+      <ion-row>
+        <ion-col class="cell-class">
+          <mat-table [dataSource]="dataSource" matSort>
+            <ng-container matColumnDef="windowNo">
+                <mat-header-cell *matHeaderCellDef mat-sort-header text-center>WindowNO</mat-header-cell>
+                <mat-cell *matCellDef="let row" text-center> {{row.windowNo}} </mat-cell>
+            </ng-container>
+          
+            <ng-container matColumnDef="currentToken">
+                <mat-header-cell *matHeaderCellDef mat-sort-header text-center>CurrentToken</mat-header-cell>
+                <mat-cell *matCellDef="let row" text-center> {{row.currentToken}} </mat-cell>
+            </ng-container>
+          
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+          
+        </ion-col>
+      
+        <!-- <ion-col>
+        
+        </ion-col>
+       -->
+        <ion-col >
+         
+            <ion-item>
+              <ion-label>Window Number</ion-label>
+              <ion-label >{{windownumber}}</ion-label>
+              
+              <ion-button (click)='presentPrompt()'>Choose window No</ion-button>
+            </ion-item>
+            <ion-item>
+              <ion-label>Current Token</ion-label>
+              <ion-label>{{currenttoken}}</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-button (click)='nextToken()'>Next Token</ion-button>
+             
+            </ion-item>
+          
+            
+         
+        </ion-col>
+      
+        
+      
+
+      </ion-row>
+      
+    </ion-grid>
+    
+
+
+</ion-content>  
+
+
+<!-- <div class="containertodisplay">
+  <ion-content>  
+      <ion-item>
+          <ion-label>Window Number</ion-label>
+          <ion-label >01</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Current Token</ion-label>
+          <ion-label>01</ion-label>
+        </ion-item>
+        
+    </ion-content>
+</div> -->
+

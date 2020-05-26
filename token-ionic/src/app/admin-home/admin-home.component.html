@@ -1,0 +1,102 @@
+<ion-header>
+    <mat-toolbar color="primary" class="navbar">
+      <div>Admin Home</div>
+      <div>
+          
+    <a class="active" href="#home" style="float:right;" [routerLink]="['/home']" >Logout</a>
+      </div>
+      </mat-toolbar>
+      
+    </ion-header>
+
+
+
+<ion-content>
+  <!-- <div class="center">
+  
+    <ion-button (click)='onAddnewoperator()'>Add New operator</ion-button>
+    <a routerLink="/generate-token">Login</a> -->
+  <!-- <br>
+  
+    <ion-button (click)='delete()'>Delete operator </ion-button>
+   
+    <br>
+  
+    <ion-button (click)='searchormodify()'>  List Of Operator </ion-button>
+    <br>
+</div>
+ 
+  <span>{{message}}</span> -->
+
+  
+  <ion-grid>
+
+     
+    <ion-row >
+      
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+        <ion-col></ion-col> 
+         <ion-col></ion-col>
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+        <ion-col>
+            <ion-button (click)='showdata()'><mat-icon>refresh</mat-icon></ion-button>
+        </ion-col>
+        <ion-col >
+          
+           
+            <ion-button (click)='onAddnewoperator()'>Add New operator</ion-button>
+         
+          </ion-col>
+    </ion-row>
+    
+    
+
+    <ion-row>
+      <ion-col class="cell-class">
+        <mat-table [dataSource]="dataSource" matSort>
+          <ng-container matColumnDef="userId">
+              <mat-header-cell *matHeaderCellDef mat-sort-header text-center>Id</mat-header-cell>
+              <mat-cell *matCellDef="let row" text-center > {{row.userId}} </mat-cell>
+          </ng-container>
+        
+          <ng-container matColumnDef="name">
+              <mat-header-cell *matHeaderCellDef mat-sort-header text-center>Name</mat-header-cell>
+              <mat-cell *matCellDef="let row" text-center> {{row.name}} </mat-cell>
+          </ng-container>
+        
+          <ng-container matColumnDef="userName">
+              <mat-header-cell *matHeaderCellDef mat-sort-header text-center>UserName</mat-header-cell>
+              <mat-cell *matCellDef="let row" text-center> {{row.userName}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="role">
+              <mat-header-cell *matHeaderCellDef mat-sort-header text-center>Role</mat-header-cell>
+              <mat-cell *matCellDef="let row" text-center> {{row.role}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="Actions">
+              <mat-header-cell *matHeaderCellDef mat-sort-header text-center>Actions</mat-header-cell>
+              <mat-cell *matCellDef="let row"> 
+                <button mat-button (click)='onEdit(row.userId)' ><mat-icon>edit</mat-icon></button>
+                <button mat-button (click)='onDelete(row.userId)'><mat-icon>delete</mat-icon></button>
+              
+               </mat-cell>
+          </ng-container>
+         
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+        
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+  
+</ion-content>
