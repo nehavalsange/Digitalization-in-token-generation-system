@@ -1,0 +1,84 @@
+<ion-header>
+    <mat-toolbar color="primary" class="navbar">
+        <div>Setu Suvidha Kendra </div>
+      <div>
+         
+          <div class="dropdown" style="float:right;" slot="secondary">
+              <button class="dropbtn">
+                  <a href="#contact" style="float:right;" slot="secondary">Contact</a>
+                </button>
+          </div>
+          <div class="dropdown" style="float:right;" slot="secondary">
+            <button class="dropbtn">
+                <a href="#about" style="float:right;" slot="secondary">About</a>
+              </button>
+          </div>
+        
+          <div class="dropdown" style="float:right;" slot="secondary">
+          <!-- <span>Customer Service</span> -->
+            <button class="dropbtn">
+              <a href="#about" class="dropbtn" style="float:right;" slot="secondary">Customer Service</a>
+            </button>
+  
+            <div class="dropdown-content">
+              <a href="#" routerLink="/User">SMS Service</a>
+              <a href="#" routerLink="/livestatus">Live Status</a>
+            </div>
+          </div>
+  
+          <div class="dropdown" style="float:right;" slot="secondary">
+            <button class="dropbtn">
+            <!-- Login As -->
+            <!-- <i class="fa fa-caret-down"></i> -->
+              <a href="#about" class="dropbtn" style="float:right;" slot="secondary">Login As</a>
+            </button>
+            <div class="dropdown-content">
+              <a href="#" routerLink="/login">Token Generator</a>
+              <a href="#" routerLink="/login">Window Operator</a>
+              <a href="#" routerLink="/adminlogin">Admin</a>
+            </div>
+          </div>
+          <div class="dropdown" style="float:right;" slot="secondary">
+              <button class="dropbtn">
+                <a class="active" href="#home" style="float:right;" [routerLink]="['/home']" routerLinkActive="router-link-active" slot="secondary">Home</a>
+              </button>
+          </div>
+      </div>
+    </mat-toolbar>
+    
+  
+  </ion-header>
+
+
+  <ion-content>
+      <ion-grid>      
+    
+      
+            <ion-row>
+  <ion-col></ion-col>
+              <ion-col class="cell-class">
+                <mat-table [dataSource]="dataSource" matSort>
+                  <ng-container matColumnDef="windowNo">
+                      <mat-header-cell *matHeaderCellDef mat-sort-header text-center>WindowNO</mat-header-cell>
+                      <mat-cell *matCellDef="let row" text-center> {{row.windowNo}} </mat-cell>
+                  </ng-container>
+                
+                  <ng-container matColumnDef="currentToken">
+                      <mat-header-cell *matHeaderCellDef mat-sort-header text-center>CurrentToken</mat-header-cell>
+                      <mat-cell *matCellDef="let row" text-center> {{row.currentToken}} </mat-cell>
+                  </ng-container>
+                
+                  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+                
+              </ion-col>
+              <ion-col></ion-col>
+  
+            </ion-row>
+  
+            
+          
+        </ion-grid>
+        
+  </ion-content>

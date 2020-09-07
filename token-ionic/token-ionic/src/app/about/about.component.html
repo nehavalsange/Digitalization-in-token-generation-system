@@ -1,0 +1,109 @@
+<ion-header>
+  <mat-toolbar color="primary" class="navbar">
+      <div>Setu Suvidha Kendra </div>
+    <div>
+       
+        <div class="dropdown" style="float:right;" slot="secondary">
+            <button class="dropbtn">
+                <a href="#contact" style="float:right;" slot="secondary">Contact</a>
+              </button>
+        </div>
+        <div class="dropdown" style="float:right;" slot="secondary">
+          <button class="dropbtn">
+              <a class="active" href="#" routerLink="/about" style="float:right;" routerLinkActive="router-link-active" slot="secondary">About</a>
+            </button>
+        </div>
+      
+        <div class="dropdown" style="float:right;" slot="secondary">
+        <!-- <span>Customer Service</span> -->
+          <button class="dropbtn">
+            <a href="#about" class="dropbtn" style="float:right;" slot="secondary">Customer Service</a>
+          </button>
+
+          <div class="dropdown-content">
+            <a href="#" routerLink="/User">SMS Service</a>
+            <a href="#" routerLink="/livestatus">Live Status</a>
+          </div>
+        </div>
+
+        <div class="dropdown" style="float:right;" slot="secondary">
+          <button class="dropbtn">
+          <!-- Login As -->
+          <!-- <i class="fa fa-caret-down"></i> -->
+            <a href="#about" class="dropbtn" style="float:right;" slot="secondary">Login As</a>
+          </button>
+          <div class="dropdown-content">
+            <a href="#" routerLink="/login">Token Generator</a>
+            <a href="#" routerLink="/login">Window Operator</a>
+            <a href="#" routerLink="/adminlogin">Admin</a>
+          </div>
+        </div>
+        <div class="dropdown" style="float:right;" slot="secondary">
+            <button class="dropbtn">
+              <a  href="#home" style="float:right;" [routerLink]="['/home']"  slot="secondary">Home</a>
+            </button>
+        </div>
+    </div>
+  </mat-toolbar>
+  
+
+</ion-header>
+<ion-content>
+ 
+  <!-- <ion-slides [options]="slideOptsOne" #slideWithNav>
+   
+    <ion-slide *ngFor="let s of sliderOne.slidesItems">
+      <img src="http://localhost:8100/assets/images/image{{s.id}}.jpg">
+    </ion-slide>
+  </ion-slides> -->
+<!-- <br>
+<br>
+<br> -->
+
+  
+  <ion-card>
+
+    <ion-card-content>
+      <ion-card-title>
+        About SETU Services
+      </ion-card-title>
+      <p>
+        The term SETU here refers to the electronic bridge which is being established between the government and the people of 
+        Maharashtra. It is a project that has been started by the government of Maharashtra, and its aim is to make things easier 
+        for the common people when it comes to contacting the government. The services are aimed at setting up a fast and transparent
+        medium between the government and the people.
+
+        <br>
+        <br>
+        
+      </p>
+    </ion-card-content>
+  </ion-card>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+  <div class="footer">
+    <h1 align="center" style="color:white">SETU SUVIDHA KENDRA </h1>
+    <p align="center" style="color:white"> © 2020 . Setu Suvidha Kendra All Rights Reserved</p>
+
+  </div>
+
+
+</ion-content>

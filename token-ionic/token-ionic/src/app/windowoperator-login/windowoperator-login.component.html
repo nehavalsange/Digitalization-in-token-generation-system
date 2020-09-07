@@ -1,0 +1,168 @@
+<ion-header>
+  <mat-toolbar color="primary" class="app-header">
+    <div><a href="https://www.positronx.io" target="_blank" class="positronx">PositronX.io</a></div>
+    <span class="nav-tool-items">
+      <a mat-button routerLink="login" routerLinkActive="active">Log in</a>
+      <a mat-button mat-raised-button routerLink="register" routerLinkActive="active">Register</a>
+      <a mat-button routerLink="login" routerLinkActive="active">Log in</a>
+      <a mat-button mat-raised-button routerLink="register" routerLinkActive="active">Register</a>
+      <a mat-button routerLink="login" routerLinkActive="active">Log in</a>
+      <a mat-button mat-raised-button routerLink="register" routerLinkActive="active">Register</a>
+    </span>
+  </mat-toolbar>
+</ion-header>
+ 
+<ion-content>
+<!--     
+  <mat-form-field>
+      <mat-label>Ionites</mat-label>
+      <mat-select name="ionite">
+        <mat-option value="Simon">Simon</mat-option>
+        <mat-option value="Max">Max</mat-option>
+        <mat-option value="Ben">Ben</mat-option>
+      </mat-select>
+    </mat-form-field> -->
+ 
+
+    <!-- <table mat-table multiTemplateDataRows class="mat-elevation-z8 data-table" >
+      
+      <tr>
+        <td>Window No</td>
+        <td>Token</td>
+      </tr>
+      <tr *ngFor="let ws of windowStatuses">
+        <td>{{ws.windowNo}}</td>
+        <td>{{ws.currentToken}}</td>
+      </tr>
+
+      <ng-container *ngFor="let ws of windowStatuses">
+
+    
+      <ng-container matColumnDef="WindowNo.">
+        <th mat-header-cell *matHeaderCellDef > WindowNo. </th>
+        <td mat-cell *matCellDef="let element"> {{ws.windowNo}} </td>
+        <td mat-footer-cell *cdkFooterCellDef> WindowNo. </td>
+      </ng-container>
+     
+     
+      <ng-container matColumnDef="CurrentToken">
+        <th mat-header-cell *matHeaderCellDef> CurrentToken </th>
+        <td mat-cell *matCellDef="let element"> {{ws.currentToken}} </td>
+        <td mat-footer-cell *cdkFooterCellDef> CurrentToken </td>
+      </ng-container>
+      
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      
+    </table> -->
+
+<!-- <table mat-table class="table table-trapped" >
+
+  <thead>
+    <tr>
+      <th> WindowNo</th>
+      <th>Token Number</th>
+    </tr>
+  </thead>
+<tbody>
+    <tr *ngFor="let ws of windowStatuses">
+        <td>{{ws.windowNo}}</td>
+        <td>{{ws.currentToken}}</td>
+      </tr>
+</tbody>
+</table> -->
+
+
+
+<!-- <mat-table [dataSource]="dataSource" matSort>
+  <ng-container matColumnDef="windowNo">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>WindowNO</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.windowNo}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="currentToken">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>CurrentToken</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.currentToken}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+ -->
+
+
+
+<mat-toolbar>
+  <span>{{service.form.controls['$key'].value?"Modify Employee":"New Employee"}}</span>
+  <span class="fill-remaining-space"></span>
+  <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1"><mat-icon>clear</mat-icon></button>
+</mat-toolbar>
+<form [formGroup]="service.form" class="normal-form" (submit)="onSubmit()">
+  <mat-grid-list cols="2" rowHeight="300px">
+    <mat-grid-tile>
+      <div class="controles-container">
+        <input type="hidden" formControlName="$key">
+        <mat-form-field>
+          <input formControlName="fullName" matInput placeholder="Full Name*">
+          <mat-error>This field is mandatory.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="email" matInput placeholder="Email">
+          <mat-error>Invalid email address.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="mobile" matInput placeholder="Mobile*">
+          <mat-error *ngIf="service.form.controls['mobile'].errors?.required">This field is mandatory.</mat-error>
+          <mat-error *ngIf="service.form.controls['mobile'].errors?.minlength">Minimum 8 charactors needed.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="city" matInput placeholder="City">
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="controles-container">
+        <div class="add-bottom-padding">
+          <mat-radio-group formControlName="gender">
+            <mat-radio-button value="1">Male</mat-radio-button>
+            <mat-radio-button value="2">Female</mat-radio-button>
+            <mat-radio-button value="3">Other</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <mat-form-field>
+          <mat-select formControlName="department" placeholder="Department">
+            <mat-option>None</mat-option>
+            <ng-container *ngFor="let department of departmentService.array">
+              <mat-option value="{{department.$key}}">{{department.code}}-{{department.name}}</mat-option>
+            </ng-container>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="hireDate" matInput [matDatepicker]="picker" placeholder="Hire Date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <div class="add-bottom-padding">
+          <mat-checkbox formControlName="isPermanent">Permanent Employee</mat-checkbox>
+        </div>
+        <div class="button-row">
+          <button mat-raised-button color="primary" type="submit" [disabled]="service.form.invalid">Submit</button>
+          <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</form>
+
+
+
+
+
+
+
+
+</ion-content>
+
+
+
