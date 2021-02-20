@@ -21,6 +21,7 @@ export class EditoperatorComponent implements OnInit {
   public message = '';
   public id = '';
   public users = [];
+  public hide = true;
 // tslint:disable-next-line:new-parens
 
   // tslint:disable-next-line:max-line-length

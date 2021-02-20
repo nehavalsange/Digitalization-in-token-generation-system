@@ -17,6 +17,7 @@ export class AddnewoperatorComponent implements OnInit {
   public name = '';
   public role = '';
   public message = '';
+  public hide = true;
   constructor(private router: Router ,  private http: HttpClient, public dialogRef: MatDialogRef<AddnewoperatorComponent>) { }
 
   ngOnInit() { }

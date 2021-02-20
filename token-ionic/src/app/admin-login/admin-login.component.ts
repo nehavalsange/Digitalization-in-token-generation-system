@@ -11,7 +11,7 @@ export class AdminLoginComponent implements OnInit {
   public username = '';
   public password = '';
   public message = '';
-
+  public hide = true;
   constructor(private router: Router) { }
 
   ngOnInit() { }

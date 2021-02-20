@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   public username = '';
   public password = '';
   public message = '';
-
+  public hide = true;
   constructor(private router: Router, private http: HttpClient) { }
 
   ngOnInit() { }
@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
         this.router.navigateByUrl('/windowoperatorhome');
         }
       } else {
-        this.message = 'Login failed';
+        this.message = 'Incorrect Username or Password';
       }
     }, (error) => {
       console.log('error', error);
